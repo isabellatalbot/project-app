@@ -2,18 +2,19 @@
 <html>
 <head>
 	<title>Weather girls</title>
-	<link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <style>
 body {
-	background-color: #11107B;
+	background-color: #011e4c;
 	color: white;
 	font-family: Cuprum;
-	font-size: 18px;
-	padding: 30px;
+	font-size: 30px;
+	padding: 100px;
 	text-align: center;
+}
+h1 {
+	font-size: 50px;
 }
 #snowflakeContainer {
 	position: absolute;
@@ -42,8 +43,8 @@ body {
 </div>
 
 <h1>How cold is it in {{response['name']}} today?</h1>
-<p>It's {{response['main']['temp']}} degrees</p>
+<p>It's {{response['main']['temp']}} degrees celsius</p>
 
-<script language="Javascript" src="/fallingsnow_v6.js"></script>
+<script src="fallingsnow_v6.js"></script>
 </body>
 </html>
