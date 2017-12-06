@@ -1,1 +1,49 @@
-hello
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather girls</title>
+	<link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<style>
+body {
+	background-color: #11107B;
+	color: white;
+	font-family: Cuprum;
+	font-size: 18px;
+	padding: 30px;
+	text-align: center;
+}
+#snowflakeContainer {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.snowflake {
+	padding-left: 15px;
+    font-family: Cambria, Georgia, serif;
+    font-size: 14px;
+    line-height: 24px;
+    position: fixed;
+    color: #FFFFFF;
+    user-select: none;
+    z-index: 1000;
+}
+.snowflake:hover {
+    cursor: default;
+}
+</style>
+</head>
+
+<body>
+<div id="snowflakeContainer">
+	<p class="snowflake">*</p>
+</div>
+
+<h1>How cold is it in {{response['name']}} today?</h1>
+<p>It's {{response['main']['temp']}} degrees</p>
+
+<script language="Javascript" src="/fallingsnow_v6.js"></script>
+</body>
+</html>
