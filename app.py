@@ -10,7 +10,7 @@ def home():
 
 @app.route("/weather")
 def index():
-	payload = {'q':'Sheffield, UK', 'units':'metric', 'appid':id}
+	payload = {'q':'{{POST["name"]}}, UK', 'units':'metric', 'appid':id}
 	response = query_weather(payload)
 	json_response = jsonify(response)
 	return render_template("index.html", response=json_response)
@@ -23,10 +23,6 @@ def query_weather(payload):
 def jsonify(response):
 	json_response = response.json()
 	return json_response
-
-print("what city are you in?")
-name= input()
-print("It works")
 
 #print(json_response['main']['temp'])
 #print(json_response['name'])
