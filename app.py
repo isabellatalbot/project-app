@@ -1,6 +1,6 @@
 import os
 import requests
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 id = "84600bca7507293656495e8972aec659"
 app = Flask("BasicApp")
 
@@ -8,9 +8,14 @@ app = Flask("BasicApp")
 def home():
 	return render_template("home.html")
 
-@app.route("/weather")
+@app.route("/weather", methods=["POST",])
 def index():
-	payload = {'q':'{{POST["name"]}}, UK', 'units':'metric', 'appid':id}
+	name = request.form['name']
+	payload = {
+		'q':'{}'.format(name),
+		'units':'metric', 
+		'appid':id
+	}
 	response = query_weather(payload)
 	json_response = jsonify(response)
 	return render_template("index.html", response=json_response)

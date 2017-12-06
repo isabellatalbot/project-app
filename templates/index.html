@@ -45,6 +45,6 @@ h1 {
 <h1>How cold is it in {{response['name']}} today?</h1>
 <p>It's {{response['main']['temp']}} degrees celsius</p>
 
-<script src="fallingsnow_v6.js"></script>
+<script src="{{ url_for('static', filename='fallingsnow_v6.js') }}"></script>
 </body>
 </html>
